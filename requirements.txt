@@ -5,3 +5,4 @@ sentence-transformers
 llama-cpp-python
 pymupdf4llm
 llama-cpp-python
+huggingface_hub
