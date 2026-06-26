@@ -65,7 +65,19 @@ def main():
 
     sections = parse_pdf_to_sections(pdf_file)
     print(f"✅ Document split into {len(sections)} sections.")
-    
+    from huggingface_hub import hf_hub_download
+from llama_cpp import Llama
+import os
+
+
+model_path = hf_hub_download(
+    repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF", 
+    filename="qwen2-0_5b-instruct-q4_k_m.gguf"
+
+
+print("\n🤖 Loading local LLM via llama.cpp...")
+llm = Llama(model_path=model_path, n_ctx=4048, n_threads=4, verbose=False)
+print("✅ Local LLM ready.")
     print("\n🤖 Loading local LLM via Llama.cpp...")
     llm = Llama(model_path=model_file, n_ctx=4048, n_threads=4, verbose=False)
     print("✅ Local LLM ready.")
