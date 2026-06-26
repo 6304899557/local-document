@@ -3,3 +3,5 @@ numpy
 scikit-learn
 sentence-transformers
 llama-cpp-python
+pymupdf4llm
+llama-cpp-python
